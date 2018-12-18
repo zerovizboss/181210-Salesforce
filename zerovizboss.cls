@@ -68,10 +68,34 @@ public class Car {
 
 }
 
+//sObject Data Types
+sObject represents realworld data
+    Example: Account/* sObject */ a = new Account(/* API Field Name & Type Operator */ Name = 'Revature');
+    //We cannot used the above syntax for declaring a car object
+        example: Car c = new Car(make = 'Ford'); // This would not work
 
-}
+insert a; //a will have a salesforce ID field (i.e. a.ID)
+Account a = [SELECT ID FROM Account LIMIT 1]; 
+//one way to grab values and store them in an sObject variable that represents a specific record(s) in a database
 
 
+/* Enums */
+Data Type used to select a finite number of values (customizable)
+
+Example:    public enum Season{WINTER, SPRING, SUMMER, FALL}
+            Season s = Season.WINTER;
 
 
+/* Collections */
+
+Grouping of objects (Things) of the same Date Type}
+    Example: Lists - Can have duplicate elements and can use when sequence matters
+    //* Can contain up to 5 nested collections*/
+    List<List<List<List<List<Integer>>>>> myInsaneList; //5 Dimensional List
+
+    List<Integer> myList; //declara a list collection of type Integer
+    List<Integer> myList = new List<Integer>();
+    List<Integer> myList = new List<Integer>{1,2,3} //1 Dimensional List
+    MyList[0]; //1 Dimensional Array List
+    MyList.add(4); //adds 4 elements to the list array
 
