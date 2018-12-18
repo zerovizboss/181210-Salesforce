@@ -140,12 +140,12 @@ Set<Integer> s = myMap.keySet();
 
 /* OPERATORS
  *  = assign
-    += increment
-    -= decrement
+    += increment i.e. Integer x = 5; x += 1
+    -= decrement    i.e. Integer y = ++x + x++; y == 12, x == 7
     *= multiply
     /= divide
-    |= logical 'or'
-    &= logical 'And'
+    |= logical 'or' i.e. x |= y === x = x || y
+    &= logical 'And' i.e. x &= y === x = x && y
     == type coercion equality (Implicit, case-inisensitive) compares object value equality, not reference equality
     === exact equality (Explicit) will only evaluate to true, if both  sides reference the exact same location in memory
     !  Bang (logical complement) non-equality
