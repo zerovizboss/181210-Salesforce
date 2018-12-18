@@ -37,6 +37,36 @@ public /*access modifier required*/ class /* keyword */ myClass /* name of the c
         //Method logic goes hear
     }
 
+public class Car {
+	
+    public String make;
+    public String model;
+    public Integer year;
+    public Decimal speed; //unit is measured in US MPH
+    
+    public Decimal getSpeed(){
+        return speed;
+    }//This method has a return value
+    
+    public void setSpeed(Decimal newSpeed){
+        speed = newSpeed;
+    }//This method has a 'side effect'
+    
+    public void accelerate(){
+        speed += 0.5; //short had code for: speed = speed + 0.5
+    }//This method has a 'side effect'
+
+/*  Execution code used in Apex Developer Window > Debug > Open Execute Anonymous Window
+    Car myCar = new Car(); //Car Constructor
+    System.debug(myCar.make);
+    myCar.make = 'Ford';
+    System.debug(myCar.make);
+    myCar.setSpeed(20);
+    myCar.accelerate();
+    System.debug(myCar.speed);
+    */
+
+}
 
 
 }
