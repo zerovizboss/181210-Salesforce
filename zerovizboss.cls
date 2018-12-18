@@ -87,10 +87,14 @@ Example:    public enum Season{WINTER, SPRING, SUMMER, FALL}
 
 
 /* Collections */
-
 Grouping of objects (Things) of the same Date Type}
-    Example: Lists - Can have duplicate elements and can use when sequence matters
-    //* Can contain up to 5 nested collections*/
+    Example: Lists 
+    /*
+    - Duplicates Allowed
+    - Ordered Lists, sequence matters
+    /* 
+    
+    //Can contain up to 5 nested collections*/
     List<List<List<List<List<Integer>>>>> myInsaneList; //5 Dimensional List
 
     List<Integer> myList; //declara a list collection of type Integer
@@ -99,3 +103,57 @@ Grouping of objects (Things) of the same Date Type}
     MyList[0]; //1 Dimensional Array List
     MyList.add(4); //adds 4 elements to the list array
 
+/* Sets
+    - Unique unordered elements
+    - No Duplicates
+    - Order doesn't mantter
+*/  //Differs from a list
+Example:    
+Set<Integer> mySet;
+Set<Integer> mySet = ne{w Set<Integer>();
+Set<Integer> mySet = new Set<Integer>{1,2,3}}
+
+mySet.add(4);
+mySet.contains(1);
+mySet.contains(5);
+mySet.remove(2);
+//mySet[1] <- not valid; mySet.get(1) <- also not valid
+
+/* Maps
+    A collection of key-value pairs
+    ***keys can be any PRIMITIVE data type*** QC Test question...hint hint
+    keys MUST BE UNIQUE
+        - used to access values in a map (also referred to as Indexing)
+    ***Map Keys CAN hold a null value*** QC Test question...hint hint
+    - keys of type String are CASE SENSITIVE ('abc, != 'ABC')
+*/
+Map<Integer, String> myMap; //key Integer data type, Value data type String
+Map<Integer, String> myMap = new map<ID, String>{
+    1 /*Key*/ => 'Jessica' /*Value*/, //Comma Separated Values (CSV)
+    2 => 'Matt' //separated just for training presentation
+};
+myMap.put(3, 'Jessica');
+myMap.put(2, 'Matt');
+myMap.containsKey(1); //returns true
+String name = myMap.get(2); //stores 'Matt' value in the Variable name
+Set<Integer> s = myMap.keySet();
+
+/* OPERATORS
+ *  = assign
+    += increment
+    -= decrement
+    *= multiply
+    /= divide
+    |= logical 'or'
+    &= logical 'And'
+    == type coercion equality (Implicit, case-inisensitive) compares object value equality, not reference equality
+    === exact equality (Explicit) will only evaluate to true, if both  sides reference the exact same location in memory
+    !  Bang (logical complement) non-equality
+ */
+ Exmaple:
+    a += b; // === a = a + b;
+    x |= y; // === x = x || y;
+    x && y; // === x & x || y & y
+    ? : // conditional boolean operator that returns value based on the boolean condition true or false
+    if toCheck == true, then returnIfTrue is returns.
+    if(condition ? True: Else False);
