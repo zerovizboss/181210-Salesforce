@@ -1,4 +1,5 @@
 /* If Statements */
+
 public enum SEASON {WINTER, SPRING, SUMMER, FALL}
 
 SEASON s = SEASON.WINTER;
