@@ -12,7 +12,7 @@ FROM ClassEnrollment__c
 WHERE Class__r.Subject__c = 'Math' 
 OR Class__r.Topic__c = 'Pre-Calculus'
 
-
+SELECT 
 
 
 
