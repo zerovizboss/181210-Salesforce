@@ -1,3 +1,5 @@
 {
-    "force.showApexJavadocContext": true
+    "force.showApexJavadocContext": true,
+    "html.suggest.angular1": false,
+    "html.suggest.ionic": false
 }
