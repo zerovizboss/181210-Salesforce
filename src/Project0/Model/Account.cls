@@ -1,7 +1,7 @@
 public abstract class Account{
 
-    /**
-     * public class Account{
+
+    public Account(){
         public Integer accountId;
         public String accountType;
         public Decimal amount;
@@ -9,7 +9,7 @@ public abstract class Account{
         public String authorizedUser2;
         public Decimal accountBalance;
     }
-     */
+    
 
     public List<accounts> customerAccounts = new List<accounts>(accountType());
     

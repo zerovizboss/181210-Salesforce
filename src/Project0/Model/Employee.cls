@@ -5,7 +5,7 @@ public class Employee{
     public String empFirstName;
     public String empLastName;
 
-    public List<empType> employee = new List<empType>();
+    public List<empType> employee = new List<empType>(new Employee(empId, empFirstName, empLastName));
 
-    Employee employees = new Employee();
+    //Employee employees = new Employee(empFirstName, empLastName);
 }
