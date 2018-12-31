@@ -6,29 +6,26 @@ public class Bank_CustomerAccountsList_Controller {
      */
 
     public List<Customer_Account__c> customer_accounts {
-        get {Customer_Account__c
+        get;
             //TODO: write code that will retreive an initial list of customer_accounts
             // and all of the fields needed for any user action taken on the page.
-        };
-        return Customer_Account__c;
-        set {Customer_Account__c = customer_accounts};
+        
+        set;
     }
     
     public String customerName {
-        get{Customer.firstName, Customer.lastName};
-        return Customer.firstName, Customer.lastname;
-        set{Customer.firstname = firstName, Customer.lastName = lastName};
+        get;
+        set;
     }
     
     public String accountType {
-        get{Account.accountType};
-        return Account.accountType;
-        set{Account.accountType = accountType};
+        get;
+        set;
     }
     
     public ID accountSelected { 
-        get{Account.accountID}; 
-        set{Account.ID = accountID}; 
+        get; 
+        set; 
     }
     
     public void getAccountsByCustomerName(){
