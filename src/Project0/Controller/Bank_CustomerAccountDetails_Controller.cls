@@ -43,6 +43,7 @@ public class Bank_CustomerAccountDetails_Controller {
     public void openDepositModal(){
         //TODO: assign the recordTypeId field of the currentTransaction property to match
         //the type of transaction of the Modal. Then set the displayDepositModal to true.
+        displayDepositModal = True;
         
         
     }
@@ -50,6 +51,7 @@ public class Bank_CustomerAccountDetails_Controller {
     public void closeDepositModal(){
         //TODO: write a method that will change the displayDepositModal property to false
         //Also, the current_transaction property should be reset to a new (blank) transaction.
+        displayDepositModal = false;
        
     }
     
@@ -67,12 +69,14 @@ public class Bank_CustomerAccountDetails_Controller {
     public void openTransferModal(){
         //TODO: assign the recordTypeId field of the currentTransaction property to match
         //the type of transaction of the Modal. Then set the displayTransferModal to true.
+        displayTransferModal = true;
         
     }
     
     public void closeTransferModal(){
         //TODO: write a method that will change the displayTransferModal property to false
         //Also, the current_transaction property should be reset to a new (blank) transaction.
+        displayTransferModal = false;
        
     }
     
@@ -90,18 +94,19 @@ public class Bank_CustomerAccountDetails_Controller {
     public void openWithdrawalModal(){
         //TODO: assign the recordTypeId field of the currentTransaction property to match
         //the type of transaction of the Modal. Then set the displayWithdrawalModal to true.
-        
+        displayWithdrawalModal = true;
     }
     
     public void closeWithdrawalModal(){
         //TODO: write a method that will change the displayWithdrawalModal property to false
         //Also, the current_transaction property should be reset to a new (blank) transaction.
-        
+        displayWithdrawalModal = false;
     }
     
     public PageReference withdrawal(){
         //TODO: call the appropriate method/methods from the Bank_Transaction_Controller class
         //in order to complete the withdrawal
+
         
         
         /* do not edit or remove the below code */
