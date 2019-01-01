@@ -7,9 +7,9 @@ public class Bank_CustomerAccountsList_Controller {
 
     public List<Customer_Account__c> customer_accounts {
         get;
+            List<Customer_Account__c> customer_accounts = new List<Customer_Account__c>()          
             //TODO: write code that will retreive an initial list of customer_accounts
             // and all of the fields needed for any user action taken on the page.
-        
         set;
     }
     
