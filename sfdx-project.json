@@ -6,6 +6,6 @@
             "default": true
         }
     ],
-    "sfdcLoginUrl": "https://login.salesforce.com/",
+    "sfdcLoginUrl": "resourceful-goat-c6wlep-dev-ed.my.salesforce.com",
     "sourceApiVersion": "44.0"
 }
