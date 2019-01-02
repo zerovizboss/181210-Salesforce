@@ -1,12 +1,12 @@
 public class Bank_TransactionHistory_Controller {
 
+
     public ID caId {
         get {
             if ( caId == null ) {
                 caId = apexPages.currentPage().getParameters().get('caId');
             	
-            }
-            
+            }            
             return caId;
         }
         set;
@@ -14,32 +14,48 @@ public class Bank_TransactionHistory_Controller {
     
     public List<Bank_Transaction__c> transactionList{
         //should contain any transactions related to the ID stored in caId
+        //put in try catch doe to reading & writing to the db in order to catch DML & sObject errors
         get {
-            transacionList = [SELECT Id, Name FROM Transaction WHERE Id = :caId];
+            
+            try{
+                //creates a list of transactions
+                List<Bank_Transaction__c> qryTransactionList = new List<Bank_Transaction__c>();
+                //bound query to variable to prevent SOQL injection
+                String qryString  = [SELECT Id, Name, CreatedDate, Amount__c, From_Account__c, To_Account__c, RecordTypeId FROM Bank_Transaction__c WHERE Id = :caId];
+                Database.SaveResult = Database.query(qryString);
+                If(Database.SaveResult.isSuccess() = true){
+                    Database.insert(qryTransactionList);
+                        }
+                else{
+                        throw DmlException(); 
+                        throw sOjectException();
+                        System.debug('Error: Unable to complete insert, see error message');
+                    }
+            return Database.query(qryString);
+            }
+            catch (DmlException e){
+                System.debug('DML Exception error: ' + e.DmlException());
+            }
+            catch (SObjectException e){
+                System.debug('sObject Exception error: ' + e.setMessage(message));
+            }
+        
         }
         set;
     }
        
     public void sortByDate(){
-        //TODO: sort the records in the transaction list by createdDate.
-        //Every time this method is called, the order of sorting 
-        //should be changed. It should toggle between ascending and descending
-
+        
+        transactionList.sort(CreatedDate, ASC||DESC);
     }
     
     public void sortByAmount(){
-        //TODO: sort the records in the transaction list by Amount__c.
-        //Every time this method is called, the order of sorting 
-        //should be changed. It should toggle between ascending and descending
-
+        
+        transactionList.sort(Amount__c, ASC||DESC);
     }
     
     public void sortByRecordType(){
-        //TODO: sort the records in the transaction list by RecordType.
-        //Every time this method is called, the order of sorting 
-        //should be changed. It should toggle between ascending and descending
         
-    }
-   
-    
+        transactionList.sort(RecordType, ASC||DESC);
+    }   
 }
