@@ -8,34 +8,48 @@ public class Bank_CustomerAccountsList_Controller {
     public List<Customer_Account__c> customer_accounts {
         
         get{
-            //creates a list of transactions
-            List<Customer_Account__c> qryCustomerList = new List<Customer_Account__c>();
-            //queries the list of bank transactions
-            String stmtCustAccounts = [SELECT Id, Name, CreatedDate, Account__c, Balance__c, RecordTypeId FROM Customer_Account__c];
-            qryCustomerList = Database.query(stmtCustAccounts);
+            //creates a list of Customer Accounts
+            List<Customer_Account__c> CustomerList = new List<Customer_Account__c>();
+            CustomerList.add(new Customer_Account__c());
+            //inserts the list
+            Database.SaveResult[] custAcct = Database.insert(CustomerList, false);
+            //String stmtCustAccounts = [SELECT Id, Name, CreatedDate, Account__c, Balance__c, RecordTypeId FROM Customer_Account__c];
+            //qryCustomerList = Database.query(stmtCustAccounts);
+            
+            for(Database.SaveResult ca : custAcct){
+                if(ca.isSuccess()){
+                    System.debug('Customer Accounts list was generated successfully' + ca.getId());
+                }
+                else{
+                    for(Database.Error err : ca.getErrors()){
+                        System.debug('The following records had issues: ' err.getStatusCode() + ' : ' + err.getMessage() + ' on fields: ' + err.getFields());
+                    }
+                }
+            }
+            return CustomerList;
     }                            
         set;
     }
     
     public String customerName {
-        get{
-            customer_accounts.sort(customer_accounts) ASC OR DESC;
+        get{            
+            customer_accounts.sort(customer_accounts ASC OR DESC);
         }
         set;
     }
     
     public String accountType {
         get{
-            customer_accounts.sort(accountType) ASC OR DESC;
+            customer_accounts.sort(accountType ASC OR DESC);
         }
         set;
     }
     
     public ID accountSelected { 
         get{
-            customer_accounts.sort(accountSelected) ASC OR DESC;
+            customer_accounts.sort(accountSelected ASC OR DESC);
         }
-        set; 
+        set;
     }
     
     public void getAccountsByCustomerName(){

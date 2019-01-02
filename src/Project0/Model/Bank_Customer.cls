@@ -8,7 +8,7 @@ public class Bank_Customer{
     public String AuthorizedUser2_Last_Name;
 
     private static Date calculateAge(Date birthDate){
-        return TEXT(DATE(YEAR(TODAY()))-DATE(YEAR(birthDate)));
+        return YEAR(TODAY())- YEAR(birthDate);
     }
 
     public String verifyAge(Date birthDate){

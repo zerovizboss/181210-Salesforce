@@ -25,12 +25,14 @@ public class Bank_CustomerAccountDetails_Controller {
     }
     
     public Boolean displayDepositModal {
-        get; /* this should start as false*/
+        get;
+         /* this should start as false*/
         set;
     }
     
     public Boolean displayTransferModal {
-        get; /* this should start as false */
+        get;
+         /* this should start as false */
         set;
     }
     
@@ -43,7 +45,7 @@ public class Bank_CustomerAccountDetails_Controller {
     public void openDepositModal(){
         //TODO: assign the recordTypeId field of the currentTransaction property to match
         //the type of transaction of the Modal. Then set the displayDepositModal to true.
-        displayDepositModal = True;
+        displayDepositModal = true;
         
         
     }
